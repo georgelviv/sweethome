@@ -7,3 +7,8 @@ Sweet Home Dashboard
 - `$ docker tag sweethome:latest $hubname/sweethome:latest` - add tag
 - `$ docker push $hubname/sweethome:latest` - publish image
 - `$ docker login -u $username` - to login 
+
+## Ideas
+zod, https://trpc.io/
+
+https://www.prisma.io/

@@ -1,9 +1,8 @@
+import { SERVER_PORT } from '../configs';
 import { getHandler } from './handler';
 
-const port: number = Number(process.env.PORT);
+const port: number = SERVER_PORT;
 const sslPassphrase: string = process.env.SSL_PASSPHRASE as string;
-
-
 
 export function initServer(): void {
   const app = getHandler();

@@ -1,6 +1,6 @@
 import { Elysia } from 'elysia';
 import { staticPlugin } from '@elysiajs/static';
-import { version } from '../package.json';
+import { version } from '../../package.json';
 
 export function getHandler(): Elysia {
   return new Elysia()
