@@ -1,10 +1,20 @@
+import { getHandler } from './handler';
+
 const port: number = Number(process.env.PORT);
+const sslPassphrase: string = process.env.SSL_PASSPHRASE as string;
+
+
 
 export function initServer(): void {
+  const app = getHandler();
+
+  const key = Bun.file('./certs/key.pem');
+  const cert = Bun.file('./certs/cert.pem');
+
   Bun.serve({
     port: port,
-    fetch() {
-      return new Response('Hello from bun server');
+    fetch(request) {
+      return app.handle(request);
     },
     error(error) {
       return new Response(`<pre>${error}\n${error.stack}</pre>`, {
@@ -14,9 +24,11 @@ export function initServer(): void {
       });
     },
     tls: {
-      key: Bun.file('./certs/key.pem'),
-      cert: Bun.file('./certs/cert.pem'),
-      passphrase: process.env.CERT_PASSPHRASE
+      key,
+      cert,
+      passphrase: sslPassphrase
     }
-  })
+  });
+
+  console.log(`Server started at ${port} port`)
 }
