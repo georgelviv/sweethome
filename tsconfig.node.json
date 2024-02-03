@@ -5,8 +5,9 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
+    "baseUrl": "./server",
     "paths": {
-      "@configs/*": ["./server/configs/*"]
+      "@configs/*": ["./configs/*"]
     }
   },
   "include": ["vite.config.ts"]

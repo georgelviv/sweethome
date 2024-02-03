@@ -4,9 +4,11 @@ WORKDIR /app
 
 COPY ./package.json ./bun.lockb ./
 
-RUN bun install --frozen-lockfile --production
+RUN bun install --frozen-lockfile
 
 COPY . .
+
+RUN bun run build
 
 EXPOSE 9501
 
