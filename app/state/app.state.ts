@@ -7,7 +7,7 @@ export enum AppStage {
 
 export interface AppState {
   stage: AppStage;
-  changeStage: (targetStage: AppStage) => void
+  changeStage: (targetStage: AppStage) => void;
 }
 
 export const useAppStore = create<AppState>()((set) => ({

@@ -24,7 +24,9 @@
       "@assets/*": ["./assets/*"],
       "@utils/*": ["./utils/*"],
       "@utils": ["./utils"],
-      "@ui/*": ["./components/ui/*"]
+      "@ui/*": ["./components/ui/*"],
+      "@state/*": ["./state/*"],
+      "@state": ["./state"]
     }
   },
   "include": ["app"],
