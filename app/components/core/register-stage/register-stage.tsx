@@ -6,23 +6,25 @@ import { useForm } from 'react-hook-form';
 import { loginFormSchema } from './register-state.constants';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@ui/form';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@ui/form';
 
-export function RegisterStage() {
+export function RegisterStage({ changeStage }: {changeStage: (stage: AppStage) => void}) {
   const form = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
     defaultValues: {
       login: '',
     },
-  })
+  });
+
+  const toggleSpinner = useAppStore((state) => state.toggleSpinner);
 
   const onSubmit = (values: z.infer<typeof loginFormSchema>) => {
     console.log(values);
+    toggleSpinner(true);
   }
 
-  const change = useAppStore((state) => state.changeStage);
   const goBackClickHandler = () => {
-    change(AppStage.welcome);
+    changeStage(AppStage.welcome);
   };
 
   return (

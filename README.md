@@ -9,7 +9,7 @@ Sweet Home Dashboard
 - `$ docker login -u $username` - to login 
 
 ## Ideas
-zod, https://trpc.io/
+ https://trpc.io/
 
 https://www.prisma.io/
 
@@ -18,8 +18,5 @@ https://www.corbado.com/blog/passkey-tutorial-how-to-implement-passkeys#introduc
 
 Hugging Face Transformer
 
-https://lucide.dev/icons/
 
-https://ui.shadcn.com/docs/components/carousel
-
-https://tanstack.com/
+https://tanstack.com/query/v3/
