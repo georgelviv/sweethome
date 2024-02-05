@@ -15,6 +15,8 @@ https://www.prisma.io/
 
 https://www.corbado.com/blog/passkey-tutorial-how-to-implement-passkeys#introduction-how-to-implement-passkeys
 
+https://webauthn.guide/
+
 
 Hugging Face Transformer
 
