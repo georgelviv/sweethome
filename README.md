@@ -22,3 +22,7 @@ Hugging Face Transformer
 
 
 https://tanstack.com/query/v3/
+
+https://www.totaltypescript.com/typescript-5-2-new-keyword-using
+
+https://codepen.io/ninecodes/pen/dyrdQjV

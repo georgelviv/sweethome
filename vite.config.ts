@@ -10,7 +10,9 @@ export default defineConfig({
       { find: '@assets', replacement: fileURLToPath(new URL('./app/assets', import.meta.url)) },
       { find: '@utils', replacement: fileURLToPath(new URL('./app/utils', import.meta.url)) },
       { find: '@ui', replacement: fileURLToPath(new URL('./app/components/ui', import.meta.url)) },
-      { find: '@state', replacement: fileURLToPath(new URL('./app/state', import.meta.url)) }
+      { find: '@state', replacement: fileURLToPath(new URL('./app/state', import.meta.url)) },
+      { find: '@models', replacement: fileURLToPath(new URL('./models', import.meta.url)) },
+      { find: '@constants', replacement: fileURLToPath(new URL('./app/constants', import.meta.url)) }
     ]
   }
 })

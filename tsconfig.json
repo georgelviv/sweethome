@@ -5,7 +5,6 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "baseUrl": "./app",
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -21,14 +20,18 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@assets/*": ["./assets/*"],
-      "@utils/*": ["./utils/*"],
-      "@utils": ["./utils"],
-      "@ui/*": ["./components/ui/*"],
-      "@state/*": ["./state/*"],
-      "@state": ["./state"]
+      "@assets/*": ["./app/assets/*"],
+      "@utils/*": ["./app/utils/*"],
+      "@utils": ["./app/utils"],
+      "@ui/*": ["./app/components/ui/*"],
+      "@state/*": ["./app/state/*"],
+      "@state": ["./app/state"],
+      "@constants": ["./app/constants"],
+      "@server/configs/*": ["./server/configs/*"],
+      "@server/configs": ["./server/configs/"],
+      "@server/utils": ["./server/utils/"],
+      "@models": ["./models"]
     }
   },
-  "include": ["app"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["app", "server", "models"]
 }
