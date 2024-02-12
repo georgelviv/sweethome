@@ -5,7 +5,7 @@ import { RegisterStage } from '../register-stage';
 import { SpinnerOverlay } from '@ui/spinner-overlay';
 import { Toaster } from '@ui/toaster';
 
-function WelcomeStage({ changeStage }: {changeStage: (stage: AppStage) => void}) {
+function WelcomeStage({ changeStage }: { changeStage: (stage: AppStage) => void }) {
   const registerClickHandler = () => {
     changeStage(AppStage.register);
   };
@@ -23,18 +23,18 @@ export function App() {
   const changeStage = (stage: AppStage) => {
     document.startViewTransition(() => {
       change(stage);
-    })
+    });
   };
 
   return (
-    <div className='h-full'>
-      <div className='flex justify-center h-full items-center'>
-        <div className='bg-white p-3 rounded-md shadow-md relative overflow-hidden'>
-          <div className='flex justify-center'>
-            <img src={logo} width={100} className='mb-5' />
+    <div className="h-full">
+      <div className="flex justify-center h-full items-center">
+        <div className="bg-white p-3 rounded-md shadow-md relative overflow-hidden">
+          <div className="flex justify-center">
+            <img src={logo} width={100} className="mb-5" />
           </div>
-          <h1 className='text-center'>SweetHome</h1>
-          <div className='mt-5 flex justify-center'>
+          <h1 className="text-center">SweetHome</h1>
+          <div className="mt-5 flex justify-center">
             <Content changeStage={changeStage} />
           </div>
           {showSpinner && <SpinnerOverlay />}

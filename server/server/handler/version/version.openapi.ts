@@ -2,6 +2,7 @@ import { OpenAPIV3 } from 'openapi-types';
 
 export const openAPI: OpenAPIV3.OperationObject = {
   description: 'Returns SweetHome Api Version',
+  tags: ['App'],
   summary: 'API version',
   responses: {
     '200': {

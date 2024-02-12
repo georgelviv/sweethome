@@ -5,7 +5,7 @@ import { swagger } from '@elysiajs/swagger';
 import { version } from '../../../package.json';
 import { getRegisterHandler } from './register';
 import { getVersionHandler } from './version';
-import { getRootHandler } from './root.handler';
+import { getRootHandler } from './root';
 
 export function getHandler(): Elysia {
   return new Elysia()
@@ -13,9 +13,15 @@ export function getHandler(): Elysia {
       provider: 'swagger-ui',
       documentation: {
         info: {
-          title: 'Sweet Home API Documentation',
+          title: 'Sweet Home',
+          description: 'Sweet Home API Documentation',
           version
-        }
+        },
+        tags: [
+          {
+            name: 'App', description: 'General Endpoints'
+          }
+        ]
       },
       swaggerOptions: {
         

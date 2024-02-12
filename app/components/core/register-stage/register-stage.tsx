@@ -4,19 +4,17 @@ import { Input } from '@ui/input';
 import { ChevronLeft } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import {
-  Form, FormControl, FormField, FormItem, FormLabel, FormMessage
-} from '@ui/form';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@ui/form';
 import { LoginForm, loginFormSchema } from '@models';
 import { registerUserWithPasskey } from './register-stage.utils';
 
-export function RegisterStage({ changeStage }: {changeStage: (stage: AppStage) => void}) {
+export function RegisterStage({ changeStage }: { changeStage: (stage: AppStage) => void }) {
   const form = useForm<LoginForm>({
     resolver: zodResolver(loginFormSchema),
     defaultValues: {
       name: '',
       email: ''
-    },
+    }
   });
 
   const toggleSpinner = useAppStore((state) => state.toggleSpinner);
@@ -26,7 +24,7 @@ export function RegisterStage({ changeStage }: {changeStage: (stage: AppStage) =
     const response = await registerUserWithPasskey(values);
     toggleSpinner(false);
     console.log(response);
-  }
+  };
 
   const goBackClickHandler = () => {
     changeStage(AppStage.welcome);
@@ -41,29 +39,31 @@ export function RegisterStage({ changeStage }: {changeStage: (stage: AppStage) =
           </Button>
         </div>
         <FormField
-          name='name'
+          name="name"
           control={form.control}
-          render={({field}) => (
-            <FormItem className='w-full'>
+          render={({ field }) => (
+            <FormItem className="w-full">
               <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input placeholder="Name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
-          )} />
+          )}
+        />
         <FormField
-          name='email'
+          name="email"
           control={form.control}
-          render={({field}) => (
-            <FormItem className='w-full'>
+          render={({ field }) => (
+            <FormItem className="w-full">
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input placeholder="Email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
-          )} />
+          )}
+        />
         <div>
           <Button type="submit">Submit</Button>
         </div>

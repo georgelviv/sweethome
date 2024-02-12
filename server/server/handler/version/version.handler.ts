@@ -1,18 +1,17 @@
-import { Elysia } from 'elysia';
+import { Elysia, t } from 'elysia';
 import { version } from '../../../../package.json';
-import { ServerResponse } from '@models';
 import { openAPI } from './version.openapi';
-
-
+import { responseSchema } from './version.schemas';
 
 export function getVersionHandler() {
   return new Elysia()
-    .get('/version', (): ServerResponse<string> => {
+    .get('/version', () => {
       return {
         success: true,
         data: version
       }
     }, {
-      detail: openAPI
+      detail: openAPI,
+      response: responseSchema
     });
 }

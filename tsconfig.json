@@ -27,6 +27,7 @@
       "@state/*": ["./app/state/*"],
       "@state": ["./app/state"],
       "@constants": ["./app/constants"],
+      "@client": ["./app/client"],
       "@server/configs/*": ["./server/configs/*"],
       "@server/configs": ["./server/configs/"],
       "@server/utils": ["./server/utils/"],
