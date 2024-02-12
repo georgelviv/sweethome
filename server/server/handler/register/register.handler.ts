@@ -1,17 +1,7 @@
 import { ResponseErrorCodes, ServerResponse, loginFormSchema } from '@models';
 import { Elysia } from 'elysia';
-import { OpenAPIV3 } from 'openapi-types';
 import { fromZodError } from 'zod-validation-error';
-
-const openAPI: OpenAPIV3.OperationObject = {
-  description: 'Register start',
-  summary: 'Register start',
-  responses: {
-    '200': {
-      description: 'OK'
-    }
-  }
-};
+import { openAPI } from './register.openapi';
 
 export function getRegisterHandler() {
   return new Elysia()

@@ -23,8 +23,9 @@ export enum ResponseErrorCodes {
   bodyValidationError = 'BodyValidationError'
 };
 
-export interface ServerResponse {
+export interface ServerResponse<T = any> {
   success: boolean;
   errorCode?: ResponseErrorCodes;
   errorMsg?: string;
+  data?: T;
 }

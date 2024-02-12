@@ -1,0 +1,1 @@
+export { getRegisterHandler } from './register.handler';
