@@ -1,18 +1,21 @@
 import { SERVER_URL } from '@constants';
-import { LoginForm, ServerResponse } from '@models';
+import { LoginForm, ServerResponseRegisterStart } from '@models';
 import { toast } from 'sonner';
 import axios from 'axios';
 
 export async function registerUserWithPasskey(loginForm: LoginForm): Promise<boolean> {
-  const url: string = `${SERVER_URL}/register-start`;
+  const url: string = `${SERVER_URL}/register/start`;
   try {
-    const response = await axios.post<ServerResponse>(url, loginForm);
-    const data: ServerResponse = response.data;
+    const response = await axios.post<ServerResponseRegisterStart>(url, loginForm);
+    const data: ServerResponseRegisterStart = response.data;
     if (!data.success) {
       toast.error(data.errorMsg);
       return false;
     }
     toast.success('Success!');
+
+    const encodedChallenge: string = data.data?.challenge!;
+    console.log(atob(encodedChallenge));
     return true;
   } catch (e) {
     toast.error('Something went wrong');

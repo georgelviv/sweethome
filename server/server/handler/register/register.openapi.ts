@@ -36,7 +36,16 @@ export const openAPI: OpenAPIV3.OperationObject = {
             properties: {
               success: {
                 type: 'boolean',
-                example: true
+                example: true,
+              },
+              data: {
+                type: 'object',
+                properties: {
+                  challenge: {
+                    type: 'string',
+                    example: '83VWTqb5gPEOasVQZo6TKw'
+                  }
+                }
               }
             },
           }

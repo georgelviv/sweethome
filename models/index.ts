@@ -18,7 +18,6 @@ export const loginFormSchema = z.object({
 
 export type LoginForm = z.infer<typeof loginFormSchema>;
 
-
 export enum ResponseErrorCodes {
   bodyValidationError = 'BodyValidationError'
 };
@@ -29,3 +28,5 @@ export interface ServerResponse<T = any> {
   errorMsg?: string;
   data?: T;
 }
+
+export type ServerResponseRegisterStart = ServerResponse<{challenge: string}>;

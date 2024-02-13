@@ -21,9 +21,8 @@ export function RegisterStage({ changeStage }: { changeStage: (stage: AppStage) 
 
   const onSubmit = async (values: LoginForm) => {
     toggleSpinner(true);
-    const response = await registerUserWithPasskey(values);
+    await registerUserWithPasskey(values);
     toggleSpinner(false);
-    console.log(response);
   };
 
   const goBackClickHandler = () => {
